@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Khabin LLC | {{ SEO.title }}</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
+
+    <!-- SEO -->
+    <meta name="description" content="{{ SEO.description }}" />
+    <meta property="og:title" content="{{ SEO.title }}" />
+    <meta property="og:description" content="{{ SEO.description }}" />
+    <meta property="og:type" content="{{ SEO.type }}" />
+    {% if CONFIG.image %}
+    <meta property="og:image" content="{{ CONFIG.image }}" />
+    {% else %}
+    <meta property="og:image" content="https://khabin.co/static/images/Icon.png" />
+    {% endif %}
+    <meta property="og:url" content="{{ CONFIG.url }}" />
+    <meta property="og:site_name" content="Khabin LLC" />
+
+    <!-- Fathom -->
+    <script src="https://cdn.usefathom.com/script.js" data-site="LDVYSXGN" defer></script>
+
+    <!-- Visitorkit -->
+    <script src="https://c.visitorkit.com/sdk.min.js"></script>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/static/images/Icon.png" />
+
+    <!-- Schema -->
+    {% if HOME %}
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Khabin LLC",
+        "image": "https://khabin.co/static/images/Icon.png",
+        "email": "hello(at)khabin.co"
+      }
+    </script>
+    {% endif %} {% if SEO.type == "article" %}
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "url": "{{ CONFIG.url }}",
+        "image": "{{ CONFIG.image }}",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Khabin LLC",
+          "logo": "hhttps://khabin.co/static/images/Icon.png"
+        },
+        "headline": "{{ SEO.title }}",
+        "author": {
+          "@type": "Person",
+          "givenName": "Terrillo",
+          "familyName": "Walls"
+        }
+      }
+    </script>
+    {% endif %}
+  </head>
+  <body class="{% if HOME %} landing {% endif %} is-preload">
+    <div id="page-wrapper">
+      <header id="header">
+        <nav id="nav" class="b">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="https://khabin.news" onclick="VK.conversion('Khabin News')" class="button">Khabin News</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      {% block content %} {% endblock %}
+
+      <footer class="pv4 black-70 bt b--black-10 container ph4 ph0-ns mt3">
+        <div class="mb4-l cf">
+          <h1 class="fl w-100 pv0 f6 fw6 ttu tracked mb4">Khabin</h1>
+          <article class="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pr2 pr0-ns">
+            <h4 class="f5 f4-l fw6">Products</h4>
+            <span class="f7 f6-l db black-70"><a href="https://khabin.news">Khabin News</a></span>
+            <span class="f7 f6-l db black-70"><a href="https://visitorkit.com">Visitorkit</a></span>
+          </article>
+          <article class="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pl2 pl0-ns">
+            <h4 class="f5 f4-l fw6">Legal</h4>
+            <span class="f7 f6-l db black-70"><a href="/privacy">Privacy Policy</a></span>
+            <span class="f7 f6-l db black-70"><a href="/terms">Terms of Use</a></span>
+          </article>
+          <article class="fl w-50 dib-ns w-auto-ns mr4-m mr5-l mb4 pr2 pr0-ns">
+            <h4 class="f5 f4-l fw6">About</h4>
+            <span class="f7 f6-l db black-70"><a href="https://terrillo.com">Founder: Terrillo Walls</a></span>
+            <span class="f7 f6-l db black-70"><a href="https://github.com/Khabin">Github</a></span>
+          </article>
+        </div>
+        <section class="cf mb5">
+          <div class="mb4 mb0-ns w-100 w-50-l fl">
+            <a class="black-70 f3 f2-ns fw6 tl link dim dib pv3 mt2 mb4 mb0-l" href="mailto:hello@khabin.co" >
+              hello@khabin.co
+            </a>
+            <p>&copy; 2021 Khabin LLC </p>
+          </div>
+        </section>
+      </footer>
+
+    </div>
+  </body>
+</html>

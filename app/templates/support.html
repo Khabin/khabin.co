@@ -1,0 +1,28 @@
+{% extends "_layout.html" %} {% block content %}
+
+<!-- Main -->
+<section id="main" class="container">
+  <header>
+    <h1 class="b f1">Khabin Support</h1>
+  </header>
+  <div class="ph4 ph0-ns">
+    <section class="box">
+      <form action="mailto:hello@khabn.co" method="get" enctype="text/plain">
+        <fieldset class="uk-fieldset">
+          <legend class="uk-legend">Contact</legend>
+
+          <div class="uk-margin">
+            <input class="uk-input" name="email" type="text" placeholder="Email" />
+          </div>
+
+          <div class="uk-margin">
+            <textarea name="comments" class="uk-textarea" rows="5" placeholder="Message"></textarea>
+          </div>
+          <button type="submit" class="uk-button">Submit</button>
+        </fieldset>
+      </form>
+    </section>
+  </div>
+</section>
+
+{% endblock %}

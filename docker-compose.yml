@@ -1,0 +1,13 @@
+version: "2"
+services:
+  khabinco:
+    container_name: khabin_dot_co
+    build: ./
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./app:/app
+    environment:
+      - SPACE_ID=${SPACE_ID}
+      - ACCESS_TOKEN=${ACCESS_TOKEN}

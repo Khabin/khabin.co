@@ -1,0 +1,21 @@
+{% extends "_layout.html" %} {% block content %}
+
+<section id="main" class="container">
+  <header>
+    <a class="btn alt" href="/blog">View All Posts</a>
+    <h2 class="b">{{ post.title }}</h2>
+    <p class="measure tl lh-copy">{{ post.summary }}</p>
+  </header>
+  <div class="ph4 ph0-ns">
+    <div class="box">
+      <span class="image featured"><img src="{{ post.image }}" alt="" /></span>
+      {{ post.html | safe }}
+    </div>
+    <a class="button special mt3" href="/blog">View All Posts</a>
+  </div>
+</section>
+<script>
+  VK.event("Read A Blog Post");
+</script>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "_layout.html" %} {% block content %}
+
+<!-- Banner -->
+<section id="banner" style="background: url('/static/images/chad-madden-f4xCFAU6ZNw-unsplash.jpg') center center">
+  <img src="/static/images/Icon.png" width="100px" class="br-100" alt="Khabin LLC" />
+  <h1 class="b white f1">Khabin LLC</h1>
+  <p>Simple & Powerful Technology Products</p>
+</section>
+
+<!-- Main -->
+<section id="main" class="container">
+  <section class="box special">
+    <header class="major">
+      <h2 class="b">Khabin News</h2>
+      <p class="mw6 mb3" style="padding-bottom: 20px;">
+        A powerful news consumption app. Khabin News analyzes and dissects content; identifying only facts from expert
+        sources and providing you with a focused overview.
+      </p>
+      <ul class="db actions stacked">
+        <li>
+          <a href="https://khabin.news" onclick="VK.conversion('Khabin News')" class="button special"
+            >Go To Khabin News</a
+          >
+        </li>
+      </ul>
+    </header>
+  </section>
+  <article class="athelas pa4">
+    <p class="f6 f4-ns lh-copy measure center">
+      For the past 10 years, I’ve focused on building technology solutions for many companies and political campaigns.
+      For the better half of the last 5 years, I was at a B2B media company. My last day with a traditional job is
+      Friday, January 29th. 2021 is about taking those skills and building something on my own.
+    </p>
+    <blockquote class="f3">
+      <p class="fw9 lh-copy lh-title-ns">
+        Following the news is overwhelming and there are too many publications and content created to find something
+        just for you. More and more people want to informed about what’s going on in the world and their own country.
+        Khabin News is providing a great starting place.
+      </p>
+    </blockquote>
+    <p class="f6 f4-ns lh-copy measure center">
+      This new journey about commitment. In the seek of purpose Khabin will be my only project this year. If things go
+      horribly wrong my goal is to take a break and write a book about failure then try again. I’d like to thank
+      everyone who has or will support my work, inspiring me to attempt this in the first place. I have no idea how any
+      of this will play out, but I’m willing to take the risk.
+    </p>
+    <a
+      class="fr"
+      href="https://mrterrillo.medium.com/starting-a-new-bootstrapped-media-curation-company-in-2021-ac898fb37ad6"
+      >- Terrillo Walls</a
+    >
+  </article>
+
+  <div class="ph4 ph0-ns">
+    <h1 class="uk-heading-line f3 b"><span>Khabin Blog</span></h1>
+    <div class="row" style="padding-bottom: 20px;">
+      {% for post in CONFIG.posts %}
+      <div class="col-12">
+        <section class="box special">
+          <span class="image featured"><img src="{{ post.image }}" alt="" /></span>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.summary }}</p>
+          <ul class="actions special">
+            <li><a href="{{ post.url }}" class="button special">Read Article</a></li>
+          </ul>
+        </section>
+      </div>
+      {% endfor %}
+    </div>
+    <ul class="actions stacked">
+      <li><a href="/blog" class="button alt">View All Posts</a></li>
+    </ul>
+  </div>
+</section>
+
+{% endblock %}
